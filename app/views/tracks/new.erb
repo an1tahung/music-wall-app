@@ -1,17 +1,19 @@
 <h1>Add a song!</h1>
 
-<% if @message.errors.any? %>
+<% if @track.errors.any? %>
 <div>
-    <strong>Some issues with your message, please fix them:</strong>
+    <strong>Uh oh! Please fill out the required fields: </strong>
     <ul>
-      <% @message.errors.full_messages.each do|message| %>
-        <li><%=message %></li>
+      <% @track.errors.messages.values.each do|msg| %>
+        <% msg.each do |m| %>
+         <li><%= m %></li>
+        <% end %>
       <% end %>
     </ul>
 </div>
 <% end %>
 
-<form method='post' action="/tracks">
+<form method="POST" action="/tracks">
   <div> 
     <label>Artist:</label>
     <input type="text" name="author" value="<%= @track.author %>">
