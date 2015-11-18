@@ -1,7 +1,10 @@
+
+<h1 class="text-center">Welcome to the Music Wall</h1>
 <% @tracks.each do |track| %>
 <div class="track">
-<h1><%= track.song_title %></h3>
-<h3><%= track.url %></h3>
-<h2>Artist: <%= track.author %></h2>
+<h2 class="text-center"><%= track.song_title %></h2>
+<h4 class="text-center"><%= track.url %></h4>
+<h3 class="text-center">Artist: <%= track.author %></h3>
 <% end %>
-<a href="/tracks/new">Add a song to the Music Wall!</a>
+<p class="text-center"><a href="/tracks/new" class="btn btn-warning btn-lg round" role="button">Add a song to the Music Wall</a> </p>
+</div>
